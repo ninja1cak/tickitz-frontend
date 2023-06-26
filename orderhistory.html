@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./tailwind.config.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./script/topnavbarmobiletailwind.js"></script> 
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5F2EEA',
+                        green1: '#00BA88',
+                        yellow1: '#F4B7404D'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100">
+  <header>
+    <nav class="bg-white tracking-wider ">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 py-4 lg:px-8 relative z-50 bg-white ">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="flex flex-1 justify-between space-x-20 items-center sm:justify-start sm:items-stretch " >
+            <div class="flex flex-shrink-0 items-center ">
+              <img class="block h-8 w-auto lg:hidden" src="./img/homepage/logo.png" alt="Your Company">
+              <img class="hidden h-8 w-auto lg:block" src="./img/homepage/logo.png" alt="Your Company">
+            </div>
+            <div class="inset-y-0 left-0 flex items-center sm:hidden">
+              <button type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white hover:outline-none hover:ring-2 hover:ring-inset hover:ring-white" aria-controls="mobile-menu" aria-expanded="false" onclick="myFunction('mobile-menu')">
+                <span class="sr-only">Open main menu</span>
+                <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                  <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div class="hidden sm:ml-6 sm:block">
+              <div class="flex space-x-10  pt-2">
+                <a href="#" class=" text-gray-500 hover:text-gray-700 text-center justify-center text-sm font-medium">Home</a>
+                <a href="#" class=" text-gray-500 hover:text-gray-700 text-center justify-center text-sm font-medium">List Movie</a>
+              </div>
+            </div>
+          </div>
+          <div class="hidden sm:flex absolute inset-y-0 right-0 items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <button type="button" class="mr-5 rounded-full p-1 text-gray-400 hover:text-white hover:outline-none hover:ring-2 hover:ring-white hover:ring-offset-2 hover:ring-offset-primary hover:opacity-80 active:opacity-50" type="button" onclick="toggleModal('modal-id')">
+              <img class="h-4" src="./img/search_icon.png">
+            </button>
+            <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-id">
+              <div class="relative w-auto my-6 mx-auto max-w-3xl">
+                <!--content-->
+                <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                  <!--body-->
+                  <div class="relative p-6 flex-auto">
+                      <form>
+                        <input type="text" placeholder="Search Movie" class="pl-6 w-full border border-gray-300 h-12 rounded-lg">
+                      </form>
+                  </div>
+                  <!--footer-->
+                  <div class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+                    <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
+                      Close
+                    </button>
+                    <button class="bg-primary text-white active:opacity-50 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
+                      Search
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
+            <script type="text/javascript">
+              function toggleModal(modalID){
+                document.getElementById(modalID).classList.toggle("hidden");
+                document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
+                document.getElementById(modalID).classList.toggle("flex");
+                document.getElementById(modalID + "-backdrop").classList.toggle("flex");
+              }
+            </script>
+            <div class="hidden sm:block relative ml-3">
+              <div>
+                <form type="button" action="./profilpage.html" class="flex rounded-full bg-gray-800 text-sm hover:outline-none hover:ring-2 hover:ring-white hover:ring-offset-2 hover:ring-offset-primary hover:opacity-80 active:opacity-50" id="user-menu-button" aria-expanded="false" aria-haspopup="true" onclick="myFunction('myLinks')" >
+                  <img class=" h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                  <input class="absolute w-8 h-8 rounded-full" type="submit" value=""> 
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    
+      <div class="sm:hidden" >
+        <div class="hidden absolute bg-white w-full" id="mobile-menu"> 
+          <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+          <div class="relative w-full bg-white z-50 ">
+            <form class="flex justify-center">
+              <div class="relative w-full mx-5">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
+                <input type="search" id="default-search" class="block w-full my-10 p-3 pl-10 text-base text-gray-900 border border-gray-300 rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." required>
+              </div>
+            </form>
+            <a href="#" class="border-y border-gray-300 text-gray-500 hover:text-gray-700 py-4 text-center font-medium block text-lg">Home </a>
+            <a href="#" class="border-b border-gray-300 text-gray-500 hover:text-gray-700 py-4 text-center font-medium block text-lg">List Movie</a>
+            <a href="#" class="border-b border-gray-300 text-gray-500 hover:text-gray-700 py-4 text-center font-medium block text-lg">Profile</a>            
+            <a href="#" class="border-b border-gray-300 text-gray-500 hover:text-gray-700 py-4 text-center font-medium block text-lg">Log Out</a>
+            <p class=" text-gray-500 text-md text-center items-center  pt-6 pb-2 block space-x tracking-wide">© 2020 Tickitz. All Rights Reserved.</p>
+          </div>
+          <div class="fixed inset-0 z-0 bg-black opacity-20" id="mobile-menu"></div>
+        </div>
+
+
+
+      </div>
+    </nav>
+  </header>  
+  <main>
+    <div class="lg:flex lg:mx-auto lg:mt-10 lg:w-[100%] lg:max-w-7xl lg:px-6">
+        <section>
+            <div class="block mb-10  bg-white lg:hidden">
+                <div class="flex justify-around pt-3 tracking-wider mx-auto max-w-lg">
+                    <a href="./profilpage.html" class="text-gray-300 hover:opacity-60 hover:bg-gray-50 active:opacity-20">Details Account</a>
+                    <a href="./orderhistory.html" class="border-b-4 border-primary pb-6 hover:opacity-60 hover:bg-gray-50 active:opacity-20">Order History</a>
+                </div>
+            </div>
+        </section>
+        <section class="hidden w-[100%] max-w-[320px] lg:block mr-10 ">
+            <div class="block bg-white p-10 rounded-t-lg ">
+                <p>INFO</p>
+                <div class="flex flex-col items-center mt-6 tracking-wider">
+                    <img class="mx-auto rounded-full h-36" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80">
+                    <p class="font-medium text-lg mt-4 mb-2">Jonas El Rodriguez</p>
+                    <p class="text-sm text-gray-600 ">Moviegoers</p>
+                </div>
+            </div>
+            <div class="block border-t border-gray-300 bg-white py-6 rounded-b-lg">
+                <button class="block bg-primary h-11 w-40 text-white tracking-wider text-sm mx-auto rounded-lg hover:opacity-50 active:opacity-100 active:bg-white active:text-primary border active:border-primary">Logout</button>
+            </div>
+        </section>
+        <div class="lg:w-[100%]">
+            <section>
+                <div class="hidden mb-10  bg-white lg:block pt-1 rounded-lg">
+                    <div class="flex justify-start pt-3 ml-6 tracking-wider max-w-lg">
+                        <a href="./profilpage.html" class="text-gray-300 hover:opacity-60 hover:bg-gray-50 active:opacity-20">Account Settings</a>
+                        <a href="./orderhistory.html" class=" border-b-4 border-primary pb-6 lg:mx-10 hover:opacity-60 hover:bg-gray-50 active:opacity-20">Order History</a>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="bg-white mx-3 sm:mx-auto sm:block rounded-lg mb-10 sm:w-full sm:max-w-md lg:max-w-none">
+                <div class="p-6 pb-9  flex flex-col lg:flex-row-reverse lg:justify-between lg:items-end">
+                    <img src="./img/homepage/cineone.png" alt="" class="w-32 mb-5">
+                    <div class="tracking-wider">
+                        <p class="text-sm mb-1">Tuesday, 07 July 2020 - 04:30pm</p>
+                        <p class="text-xl font-medium">Spider-Man: Homecoming</p>
+                    </div>
+                </div>
+                <p class="border-b border-gray-300 w-full"></p>
+                <div class="p-6 pb-10 lg:flex lg:justify-between lg:items-center">                
+                    <button class="bg-green1 text-white block mx-auto w-[100%] h-10 rounded-lg tracking-wider lg:max-w-[200px] lg:mx-0">Ticket in active</button>
+                    <a class="tracking-wider text-gray-300 hidden lg:block" href="./order.html">See details</a>
+                </div>
+            </section>
+
+            <section class="bg-white mx-3 sm:mx-auto sm:block rounded-lg mb-10 sm:w-full sm:max-w-md lg:max-w-none">
+                <div class="p-6 pb-9  flex flex-col lg:flex-row-reverse lg:justify-between lg:items-end">
+                    <img src="./img/homepage/cineone.png" alt="" class="w-32 mb-5">
+                    <div class="tracking-wider">
+                        <p class="text-sm mb-1">Monday, 14 June 2020 - 02:00pm</p>
+                        <p class="text-xl font-medium">Avengers: End Game</p>
+                    </div>
+                </div>
+                <p class="border-b border-gray-300 w-full"></p>
+                <div class="p-6 pb-10 lg:flex lg:justify-between lg:items-center">                
+                    <button class="bg-gray-500 text-white block mx-auto w-[100%] h-10 rounded-lg tracking-wider lg:max-w-[200px] lg:mx-0">Ticket used</button>
+                    <a class="tracking-wider text-gray-300 hidden lg:block">See details</a>
+                </div>
+            </section>
+            
+            <section class="bg-white mx-3 hidden sm:mx-auto lg:block rounded-lg mb-10 sm:w-full sm:max-w-md lg:max-w-none">
+                <div class="p-6 pb-9  flex flex-col lg:flex-row-reverse lg:justify-between lg:items-end">
+                    <img src="./img/homepage/cineone.png" alt="" class="w-32 mb-5">
+                    <div class="tracking-wider">
+                        <p class="text-sm mb-1">Monday, 10 March 2020 - 04:00pm</p>
+                        <p class="text-xl font-medium">Thor: Ragnarok</p>
+                    </div>
+                </div>
+                <p class="border-b border-gray-300 w-full"></p>
+                <div class="p-6 pb-10 lg:flex lg:justify-between lg:items-center">                
+                    <button class="bg-gray-500 text-white block mx-auto w-[100%] h-10 rounded-lg tracking-wider lg:max-w-[200px] lg:mx-0">Ticket used</button>
+                    <a class="tracking-wider text-gray-300 ">See details</a>
+                </div>
+            </section>
+            
+            
+
+        </div>
+        
+    </div>
+    
+  </main>
+  <footer class="bg-white h-full flex-col py-20 text-gray-400 font-sans font-normal tracking-wider">
+    <div class="mx-auto mb-10 max-w-7xl flex flex-col lg:flex-row justify-between px-4 sm:px-6 lg:px-8">
+      <div class="w-72">
+          <img src="./img/homepage/logo.png" class="mb-5 h-10 object-contain">
+          <p>Stop waiting in line. Buy tickets conveniently, watch movies quietly.</p>
+      </div>
+      <div>
+          <nav class="my-10 lg:my-0">
+              <p class="text-black mb-5"><strong>Explore</strong></p>
+              <div class="flex lg:flex-col gap-3">
+                <a>Home</a>
+                <a>List movie</a>
+              </div>
+          </nav>
+      </div>
+      <div>
+          <p class="text-black mb-5"><strong>Our Sponsor</strong></p>
+          <div class="flex gap-5 mb-3 items-center lg:items-start lg:flex-col  ">
+            <img src="./img/homepage/ebv.png" class="h-7 object-contain">
+            <img src="./img/homepage/cineone.png" class="h-5 object-contain">
+            <img src="./img/homepage/hiflix.png" class="h-6 object-contain">     
+          </div>
+               
+      </div>
+      <div class="my-10 lg:my-0">
+          <p class="text-black mb-5"><strong>Follow us</strong></p>
+          <div class="flex lg:flex-col gap-7 lg:gap-5">          
+            <nav class="flex items-center gap-2">
+              <img src="./img/homepage/eva_facebook-outline.png" class="h-5 inline object-contain">
+              <a class="hidden lg:inline-block"> Tickitz Cinema id</a>
+            </nav>
+            <nav class="flex items-center gap-2">
+              <img src="./img/homepage/bx_bxl-instagram.png" class="h-5 inline object-contain">
+              <a class="hidden lg:inline-block"> tickitz.id</a>
+            </nav>
+            <nav class="flex items-center gap-2">
+              <img src="./img/homepage/eva_twitter-outline.png" class="h-5 inline object-contain"> 
+              <a class="hidden lg:inline-block">tickitz.id</a>
+            </nav>
+            <nav class="flex items-center gap-2">
+              <img src="./img/homepage/feather_youtube.png" class="h-5 inline object-contain">
+              <a class="hidden lg:inline-block"> Tickitz Cinema id</a>
+            </nav>
+          </div>               
+      </div>
+    </div>
+    <p class="text-gray-700 text-center tracking-wider">© 2020 Tickitz. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
