@@ -11,8 +11,10 @@ Tickitz is a place to buy cinema tickets.
 2. Start the local server.
 
 ## Project Screenshot
+<div align="center">
+    <img width="500" src="./img/github/accountsetting.PNG" alt="project-screenshot">
+    <img width="500" src="./img/github/listmovie.PNG" alt="project-screenshot">
+    <img width="500" src="./img/github/order.PNG" alt="project-screenshot">
+    <img width="500" src="./img/github/orderhistory.PNG" alt="project-screenshot">
+</div>
 
-<img width="500" src="./img/github/accountsetting.PNG" alt="project-screenshot">
-<img width="500" src="./img/github/listmovie.PNG" alt="project-screenshot">
-<img width="500" src="./img/github/order.PNG" alt="project-screenshot">
-<img width="500" src="./img/github/orderhistory.PNG" alt="project-screenshot">
